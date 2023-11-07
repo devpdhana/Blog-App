@@ -82,6 +82,7 @@ const Login = ({ isLoggedin, setIsLoggedin }) => {
           {isSignup && (
             <TextField
               name="name"
+              variant='outlined'
               value={inputValues.name}
               onChange={handleChange}
               placeholder="Name"
@@ -89,6 +90,7 @@ const Login = ({ isLoggedin, setIsLoggedin }) => {
             />
           )}
           <TextField
+          variant='outlined'
             name="email"
             value={inputValues.email}
             onChange={handleChange}
@@ -97,6 +99,7 @@ const Login = ({ isLoggedin, setIsLoggedin }) => {
             margin="normal"
           />
           <TextField
+          variant='outlined'
             name="password"
             value={inputValues.password}
             onChange={handleChange}
