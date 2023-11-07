@@ -41,11 +41,12 @@ const Blog = ({title,description,image,userName,isUser,blogId}) => {
         >
           <IconButton
             onClick={handleEdit}
-            sx={{ marginLeft: "auto", color: "rgb(63,94,251)" }}
+            color='warning'
+            sx={{ marginLeft: "auto"}}
           >
             <EditIcon />
           </IconButton>
-          <IconButton onClick={handleDelete} sx={{ color: "rgb(63,94,251)" }}>
+          <IconButton color='error' onClick={handleDelete}>
             <DeleteOutline />
           </IconButton>
         </Box>
@@ -63,6 +64,8 @@ const Blog = ({title,description,image,userName,isUser,blogId}) => {
         title={title}
       />
       <CardMedia component="img" height="194" image={image} alt="Image" />
+      <hr />
+      <br />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
           <b>{userName}</b>
