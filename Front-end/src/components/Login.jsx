@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import {Box, Button, TextField, Typography} from'@mui/material'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import { useStyles } from '../utils';
 
 const Login = ({ isLoggedin, setIsLoggedin }) => {
   const [isSignup, setIssignup] = useState(false);
   const navigate = useNavigate()
+  const classes = useStyles()
   const [inputValues, setInputvalues] = useState({
     name: "",
     email: "",
@@ -76,13 +78,14 @@ const Login = ({ isLoggedin, setIsLoggedin }) => {
           boxShadow={"10px 10px 10px 20px #ccc"}
           width={400}
         >
-          <Typography variant="h3" padding={3}>
+          <Typography className={classes.font} variant="h3" padding={3}>
             {isSignup ? "Signup" : "Login"}
           </Typography>
           {isSignup && (
             <TextField
+              className={classes.font}
               name="name"
-              variant='outlined'
+              variant="outlined"
               value={inputValues.name}
               onChange={handleChange}
               placeholder="Name"
@@ -90,7 +93,8 @@ const Login = ({ isLoggedin, setIsLoggedin }) => {
             />
           )}
           <TextField
-          variant='outlined'
+            className={classes.font}
+            variant="outlined"
             name="email"
             value={inputValues.email}
             onChange={handleChange}
@@ -99,7 +103,8 @@ const Login = ({ isLoggedin, setIsLoggedin }) => {
             margin="normal"
           />
           <TextField
-          variant='outlined'
+            className={classes.font}
+            variant="outlined"
             name="password"
             value={inputValues.password}
             onChange={handleChange}
@@ -108,6 +113,7 @@ const Login = ({ isLoggedin, setIsLoggedin }) => {
             margin="normal"
           />
           <Button
+            className={classes.font}
             type="submit"
             sx={{ margin: 3, borderRadius: 3 }}
             color="warning"
@@ -116,6 +122,7 @@ const Login = ({ isLoggedin, setIsLoggedin }) => {
             Submit
           </Button>
           <Button
+            className={classes.font}
             onClick={(e) => setIssignup(!isSignup)}
             sx={{ margin: 3, borderRadius: 3 }}
           >
